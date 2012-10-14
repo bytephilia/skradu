@@ -1,5 +1,11 @@
-<% provide(:title, 'Home') %>
-<h1>Skradu.is</h1>
-<p>
-	Þetta er forsíða skradu.is.
-</p>
+<% provide(:title, '') %>
+<div class="center hero-unit">
+	<h1>Velkomin(n) a Skradu.is</h1>
+	<p>
+		Þetta er forsíða skradu.is.
+	</p>
+
+	<%= link_to "Sign up now!", '#', class: "btn btn-large btn-primary" %>
+</div>
+
+<%= link_to image_tag("rails.png", alt: "Skradu.is"), 'http://skradu.is' %>	
