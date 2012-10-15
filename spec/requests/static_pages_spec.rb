@@ -1,4 +1,6 @@
-﻿require 'spec_helper'
+﻿# encoding: UTF-8
+
+require 'spec_helper'
 
 describe "Static pages" do
 
@@ -8,7 +10,7 @@ describe "Static pages" do
 
 		before { visit root_path }
 
-		it { should have_selector('h1', text: 'Skradu.is') }
+		it { should have_selector('h1', text: 'Skráðu.is') }
 		it { should have_selector('title', text: full_title('')) }
 		it { should_not have_selector('title', text: '| Home') }
 
