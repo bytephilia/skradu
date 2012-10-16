@@ -1,4 +1,17 @@
 <% provide(:title, '') %>
+
+<% if signed_in? %>
+  <div class="row">
+    <aside class="span4">
+      <section>
+        <%= render 'shared/user_info' %>
+      </section>
+      <section>
+        <%= render 'shared/entry_form' %>
+      </section>
+    </aside>
+  </div>
+<% else %>  
 <div class="center hero-unit">
 	<h1>Velkomin(n) a Skráðu.is</h1>
 	<p>
@@ -9,3 +22,4 @@
 </div>
 
 <%= link_to image_tag("rails.png", alt: "Skradu.is"), 'http://skradu.is' %>	
+<% end %> 

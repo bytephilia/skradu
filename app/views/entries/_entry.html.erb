@@ -1,0 +1,11 @@
+<li>
+	<div class="date"><i class="icon-calendar"></i><%= entry.date %></div>
+	<div class="distance"><i class="icon-arrow-right"></i><%= entry.distance %> KM</div>
+	<div class="duration"><i class="icon-time"></i><%= entry.duration %></div>
+	<% if !entry.content.blank? %>
+	<div class="content"><i class="icon-pencil"></i><%= entry.content %></div>
+	<% end %>
+	<span class="timestamp">
+    Posted <%= time_ago_in_words(entry.created_at) %> ago.
+	</span>
+</li>
