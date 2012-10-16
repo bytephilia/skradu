@@ -20,8 +20,8 @@ class Entry < ActiveRecord::Base
   validates :content, length: { maximum: 500 }
   validates_numericality_of :distance
 
-  VALID_DISTANCE_REGEX = /^(?:(?:([01]?\d|2[0-3]):)?([0-5]?\d):)?([0-5]?\d)$/i
-  validates :duration, presence: true, format: { with: VALID_DISTANCE_REGEX }  
+  VALID_DISTANCE_REGEX = /[0-2][0-3]:[0-5][0-9]:[0-5][0-9]/i
+  validates :duration, presence: true, format: { with: VALID_DISTANCE_REGEX }
 
   default_scope order: 'entries.created_at DESC'
 
