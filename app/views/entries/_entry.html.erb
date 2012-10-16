@@ -2,18 +2,16 @@
 	<div class="date"><i class="icon-calendar"></i><%= entry.date %></div>
 	<div class="distance"><i class="icon-arrow-right"></i><%= entry.distance %> KM</div>
 	<div class="duration"><i class="icon-time"></i><%= entry.duration %></div>
+	<div class="pace"><i class="icon-signal"></i><%= pace(entry.duration, entry.distance) %> mín/km</div>
 	<% if !entry.content.blank? %>
 	<div class="content"><i class="icon-pencil"></i><%= entry.content %></div>
 	<% end %>
-	<span class="timestamp">
+	<div class="timestamp">
     Posted <%= time_ago_in_words(entry.created_at) %> ago.
-	</span>
-  <% if current_user?(entry.user) %>
-    <%= link_to "delete", entry, method: :delete,
-                                     data: { confirm: "You sure?" },
-                                     title: entry.content %>
-  <% end %>
-	<span class="timestring">
-    <%= time_to_minutes(entry.duration, entry.distance) %>
-	</span>  
+    <% if current_user?(entry.user) %>
+      <%= link_to "delete", entry, method: :delete,
+                                       data: { confirm: "You sure?" },
+                                       title: entry.content %>
+    <% end %>     
+	</div>
 </li>

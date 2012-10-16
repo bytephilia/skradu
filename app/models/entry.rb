@@ -17,7 +17,6 @@ class Entry < ActiveRecord::Base
   belongs_to :user
 
   validates :user_id, presence: true
-  validates :content, length: { maximum: 500 }
   validates_numericality_of :distance
 
   VALID_DISTANCE_REGEX = /[0-2][0-3]:[0-5][0-9]:[0-5][0-9]/i

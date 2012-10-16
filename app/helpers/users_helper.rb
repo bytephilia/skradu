@@ -8,7 +8,7 @@ module UsersHelper
     image_tag(gravatar_url, alt: user.name, class: "gravatar")
   end
 
-  def time_to_minutes(time_str, km)  
+  def pace(time_str, km)  
     hours, minutes, seconds = time_str.split(":").map{|str| str.to_i}  
     minutes = hours * 60 + minutes + seconds / 60
     raw_pace = minutes / km
