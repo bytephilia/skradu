@@ -7,6 +7,7 @@ before_filter :admin_user,     only: :destroy
   def show
     @user = User.find(params[:id])
     @entries = @user.entries.paginate(page: params[:page], :per_page => 10)
+    @shoes = @user.shoes.paginate(page: params[:page], :per_page => 10)
   end
 
   def new

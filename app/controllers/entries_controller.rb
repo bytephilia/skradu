@@ -7,12 +7,16 @@ class EntriesController < ApplicationController
  
   def create
     @entry = current_user.entries.build(params[:entry])
+    @shoe = Shoe.find(@entry.shoe_id)
+    @distance = @entry.distance + @shoe.distance
+    @shoe.update_attributes(:distance => @distance)   
     if @entry.save    
       flash[:success] = "Entry created!"
       redirect_to root_url
     else
       render 'static_pages/home'
     end
+
   end
 
   def destroy

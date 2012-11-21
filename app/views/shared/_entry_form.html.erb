@@ -10,7 +10,12 @@
     <%= f.text_field :duration, placeholder: "KK:MM:SS" %>
   </div>  
   <div class="field">
-    <%= f.text_area :content, placeholder: "Create new entry...", rows: '10' %>
+    <%= f.text_area :content, placeholder: "Create new entry...", rows: 10 %>
   </div>
+  <div class="field">
+    <%= collection_select(:entry, :shoe_id, current_user.shoes, 
+                                   :id, :shoe_info, :include_blank => true) %>
+  </div>  
+
   <%= f.submit "Post", class: "btn btn-large btn-primary" %>
 <% end %>

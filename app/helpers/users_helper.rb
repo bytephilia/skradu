@@ -8,16 +8,4 @@ module UsersHelper
     image_tag(gravatar_url, alt: user.name, class: "gravatar")
   end
 
-  def pace(time_str, km)  
-    hours, minutes, seconds = time_str.split(":").map{|str| str.to_i}  
-    minutes = hours * 60 + minutes + seconds / 60
-    raw_pace = minutes / km
-    int_pace = raw_pace.to_int
-    pace_seconds = ((raw_pace - int_pace) * 60).to_int
-    "#{ int_pace }:#{ pace_seconds }"
-
-  rescue          # do any additional error handling here  
-    -1  
-  end   
-
 end

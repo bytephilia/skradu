@@ -10,10 +10,11 @@
 #  user_id    :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  shoe_id    :integer
 #
 
 class Entry < ActiveRecord::Base
-  attr_accessible :content, :date, :distance, :duration
+  attr_accessible :content, :date, :distance, :duration, :shoe_id
   belongs_to :user
 
   validates :user_id, presence: true

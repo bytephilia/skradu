@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121016005829) do
+ActiveRecord::Schema.define(:version => 20121017005242) do
 
   create_table "entries", :force => true do |t|
     t.text     "content"
@@ -21,9 +21,18 @@ ActiveRecord::Schema.define(:version => 20121016005829) do
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "shoe_id"
   end
 
   add_index "entries", ["user_id", "created_at"], :name => "index_entries_on_user_id_and_created_at"
+
+  create_table "shoes", :force => true do |t|
+    t.string   "name"
+    t.decimal  "distance"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "user_id"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "name"
